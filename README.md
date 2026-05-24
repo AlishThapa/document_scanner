@@ -91,10 +91,8 @@ lib/
 ## 📱 Screenshots
 
 | Home | Camera Options | Result |
-<img width="1290" height="2796" alt="Image" src="https://github.com/user-attachments/assets/b320216c-d3d0-4ad2-96c1-86122a3ab310" />
-| :---: | :---: | :---: | :---: |
-| ![Home](<img width="1290" height="2796" alt="Image" src="https://github.com/user-attachments/assets/b320216c-d3d0-4ad2-96c1-86122a3ab310" />) | ![Camera Options](<img width="1290" height="2796" alt="Image" src="https://github.com/user-attachments/assets/56473887-7a52-41e1-acce-4ff57faf15b2" />) | ![Result](<img width="1290" height="2796" alt="Image" src="https://github.com/user-attachments/assets/1ff0f922-e804-4fca-846b-a9d45185c4fa" />) |
-
+| :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/b320216c-d3d0-4ad2-96c1-86122a3ab310" width="200"/> | <img src="https://github.com/user-attachments/assets/56473887-7a52-41e1-acce-4ff57faf15b2" width="200"/> | <img src="https://github.com/user-attachments/assets/1ff0f922-e804-4fca-846b-a9d45185c4fa" width="200"/> |
 ---
 
 *Built with ❤️ by the Alish Thapa.*
