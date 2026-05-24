@@ -58,6 +58,45 @@ class ResultScreen extends ConsumerWidget {
     }
   }
 
+  void _showFullScreenImage(BuildContext context, String imagePath, String heroTag) {
+    showDialog(
+      context: context,
+      useSafeArea: false,
+      builder: (context) => Scaffold(
+        backgroundColor: Colors.black,
+        body: Stack(
+          children: [
+            Center(
+              child: Hero(
+                tag: heroTag,
+                child: InteractiveViewer(
+                  minScale: 0.5,
+                  maxScale: 4.0,
+                  child: Image.file(
+                    File(imagePath),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.m),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.close, color: Colors.white, size: 28),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final historyAsync = ref.watch(historyNotifierProvider);
@@ -96,15 +135,18 @@ class ResultScreen extends ConsumerWidget {
                         children: [
                           // Image Preview
                           if (scan.imagePath.isNotEmpty)
-                            Hero(
-                              tag: scan.id,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(24),
-                                child: Image.file(
-                                  File(scan.imagePath),
-                                  width: double.infinity,
-                                  height: 320,
-                                  fit: BoxFit.cover,
+                            GestureDetector(
+                              onTap: () => _showFullScreenImage(context, scan.imagePath, scan.id),
+                              child: Hero(
+                                tag: scan.id,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(24),
+                                  child: Image.file(
+                                    File(scan.imagePath),
+                                    width: double.infinity,
+                                    height: 320,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
