@@ -12,7 +12,8 @@
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="document_scanner">
+        android:label="document_scanner"
+        android:enableOnBackInvokedCallback="true">
 
         <activity
             android:name=".MainActivity"
